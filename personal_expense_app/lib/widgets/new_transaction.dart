@@ -11,13 +11,36 @@ class NewTransaction extends StatefulWidget {
   NewTransaction(this.addTx);
 
   @override
-  _NewTransactionState createState() => _NewTransactionState();
+  _NewTransactionState createState() {
+    return _NewTransactionState();
+  }
 }
 
 class _NewTransactionState extends State<NewTransaction> {
   final _titleController = TextEditingController();
   final _amountController = TextEditingController();
   DateTime _selectedDate;
+
+  // State of widget on initialization.
+  @override
+  void initState() {
+    print('init state');
+    super.initState();
+  }
+
+  // Called every time the widget assosiated with a state changegs.
+  @override
+  void didUpdateWidget(NewTransaction oldWidget) {
+    print('did Update');
+    super.didUpdateWidget(oldWidget);
+  }
+
+  // When the widget is disposed / removed.
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+  }
 
   void _submitData() {
     if (_amountController.text.isEmpty) {

@@ -5,7 +5,9 @@ class ChartBar extends StatelessWidget {
   final double spendingAmount;
   final double spendingPctOfTotal;
 
-  ChartBar(this.label, this.spendingAmount, this.spendingPctOfTotal);
+// If you only have final variables you can create a constant constructor.
+// Every instance of this constructor is inchangeable.
+  const ChartBar(this.label, this.spendingAmount, this.spendingPctOfTotal);
 
   @override
   Widget build(BuildContext context) {
