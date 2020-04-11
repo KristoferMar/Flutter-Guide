@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:meals_app/category_meals_screen.dart';
+
+import '../screens/category_meals_screen.dart';
 
 class CategoryItem extends StatelessWidget {
   final String id;
@@ -10,8 +11,11 @@ class CategoryItem extends StatelessWidget {
 
   void selectCategory(BuildContext ctx) {
     Navigator.of(ctx).pushNamed(
-      CategoryMealScreen.routeName,
-      arguments: {'id': id, 'title': title},
+      CategoryMealsScreen.routeName,
+      arguments: {
+        'id': id,
+        'title': title,
+      },
     );
   }
 
@@ -29,9 +33,13 @@ class CategoryItem extends StatelessWidget {
         ),
         decoration: BoxDecoration(
           gradient: LinearGradient(
-              colors: [color.withOpacity(0.7), color],
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight),
+            colors: [
+              color.withOpacity(0.7),
+              color,
+            ],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
           borderRadius: BorderRadius.circular(15),
         ),
       ),
